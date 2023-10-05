@@ -24,5 +24,25 @@ These steps are done manually for inital setup:
 
 ### Transfer Domain
 - [X] Domain was registered in another account, therefore transfer ownership to this account (manual, time consuming)
+
+The AWS account is setup, the domain is ready, the Terraform backend is in place... All set 🚀
+
+## AWS Infra
+
+### S3 Static Hosting (aws-infra)
+
+The following components are in terraform solution:
+
+1. acm.tf - this creates a certificate in ue-east-1 (Virginia region).  This is so that the solution has certificates for SSL traffic.
+2. cloudfront.tf - this create a CloudFront CDN. It distributes content efficiently and has security features like WAF.
+3. main.tf - this file has the providers and we also specify the backend details - this will change
+4. outputs.tf - this file gives us access to technical details we need about the solution
+5. route53.tf - this configures the DNS records to point at the right places
+6. s3.tf - this creates a bucket with a configuration designed for hosting static websites
+7. variables.tf - these are variables / parameters we want to pass into the terraform before it runs
+
+### Github Actions
+
+
      
 
