@@ -18,7 +18,7 @@ These steps are done manually for inital setup:
   - [X] Run the GH Actions workflow "Backend" _manually_ from the GH console (only ever run this once ❗)
   - [X] Successfully run - the backend is in place 🧑‍🚀
      
-Sources: 
+#### Sources: 
 - [https://www.youtube.com/watch?v=FTgvgKT09qM](https://www.youtube.com/watch?v=FTgvgKT09qM)
 - [https://angelo-malatacca83.medium.com/aws-terraform-s3-and-dynamodb-backend-3b28431a76c1](https://angelo-malatacca83.medium.com/aws-terraform-s3-and-dynamodb-backend-3b28431a76c1)
 
