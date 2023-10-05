@@ -1,5 +1,5 @@
 resource aws_s3_bucket bucket {
-  bucket        = "www.nubadoo.com"
+  bucket        = "www.${var.apex_domain}"
   force_destroy = true
 }
 
