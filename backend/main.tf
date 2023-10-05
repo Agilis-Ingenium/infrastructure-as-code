@@ -28,8 +28,6 @@ resource "aws_s3_bucket" "bucket" {
 
 resource "aws_dynamodb_table" "terraform-lock" {
     name           = "nubadoo-terraform-state"
-    read_capacity  = 5
-    write_capacity = 5
     billing_mode = "PAY_PER_REQUEST"
     hash_key       = "LockID"
     attribute {
@@ -38,6 +36,6 @@ resource "aws_dynamodb_table" "terraform-lock" {
     }
     tags = {
         "Name" = "DynamoDB Terraform State Lock Table"
-        "Project" = "AgileDev"
+        "Project" = "Agile Dev"
     }
 }
