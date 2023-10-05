@@ -20,15 +20,12 @@ resource "aws_s3_bucket" "bucket" {
     object_lock_configuration {
         object_lock_enabled = "Enabled"
     }
-    tags = {
-        Project = "Agile Dev"
-    }
     lifecycle = {
         prevent_destroy = true
     }
     tags = {
         "Name" = "S3 Terraform State Lock Table"
-        "Project" = "AgileDev"
+        "Project" = "Agile Dev"
     }
 }
 
