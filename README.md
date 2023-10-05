@@ -41,6 +41,10 @@ The following components are in terraform solution:
 6. s3.tf - this creates a bucket with a configuration designed for hosting static websites
 7. variables.tf - these are variables / parameters we want to pass into the terraform before it runs
 
+An image of the solution:
+
+![aws-infra-s3-static-hosting.png](aws-infra-s3-static-hosting.png)
+
 ### Github Actions
 
 
