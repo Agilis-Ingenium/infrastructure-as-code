@@ -43,7 +43,7 @@ The following components are in terraform solution:
 
 An image of the solution:
 
-![aws-infra-s3-static-hosting.png](aws-infra-s3-static-hosting.png)
+![aws-infra-s3-static-hosting.png](img/aws-infra-s3-static-hosting.png)
 
 ### Github Actions
 
