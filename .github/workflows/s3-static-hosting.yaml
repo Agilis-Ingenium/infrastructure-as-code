@@ -1,4 +1,4 @@
-name: S3_Static_Hosting
+name: S3 Static Hosting
 
 on:
   push:
