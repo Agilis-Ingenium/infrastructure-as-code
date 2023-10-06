@@ -13,8 +13,6 @@ These steps are done manually for inital setup:
 - [X] Domain was registered in another account, therefore transfer ownership to this account (manual, time consuming)
 - [X] Manually configure the ACM certificates for the domain
 
-The AWS account is setup, the domain is ready, the Terraform backend is in place... All set 🚀
-
 ### Terraform the Backend
 - [X] Create Terraform backend
   - [X] S3 Bucket for state files (nubadoo-terraform-state-bucket)
@@ -23,6 +21,8 @@ The AWS account is setup, the domain is ready, the Terraform backend is in place
   - [X] See **backend/main.tf** for Terraform code to perform this
   - [X] Run the GH Actions workflow "Backend" _manually_ from the GH console (only ever run this once ❗)
   - [X] Successfully run - the backend is in place 🧑‍🚀
+     
+The AWS account is setup, the domain is ready, the Terraform backend is in place... All set 🚀
      
 #### Sources: 
 - [https://www.youtube.com/watch?v=FTgvgKT09qM](https://www.youtube.com/watch?v=FTgvgKT09qM)
@@ -52,7 +52,7 @@ An image of the solution:
 
 1. The Terraform module in **elephant_sql_infra/main.tf** create an instance of a **tiny_turtle** (free) database in eu-west-1 (Ireland)
 
-### Github Actions
+## Github Actions
 
 
      
