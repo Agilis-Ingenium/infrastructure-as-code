@@ -3,7 +3,7 @@ data aws_route53_zone zone {
 }
 
 resource aws_route53_record zone {
-  zone_id = aws_route53_zone.zone.zone_id
+  zone_id = data.aws_route53_zone.zone
   name    = format("%s.%s", var.domainName, var.subDomain)
   type    = "A"
   alias {
