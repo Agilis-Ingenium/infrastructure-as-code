@@ -1,4 +1,4 @@
-name: ✳️ Create Backend
+name: ✳️ CREATE Backend
 
 on:
   workflow_dispatch:
