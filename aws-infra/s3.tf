@@ -1,5 +1,5 @@
 resource aws_s3_bucket static-website {
-  bucket        = "www.${var.apex_domain}"
+  bucket        = "www.${var.domainName}"
 }
 
 resource aws_s3_bucket_website_configuration static-website {
@@ -16,5 +16,5 @@ resource aws_s3_bucket_website_configuration static-website {
 
 resource aws_s3_bucket_policy static-website {
   bucket = aws_s3_bucket.static-website.id
-  policy = templatefile("s3-policy.json", { bucket = var.bucketName })
+  policy = templatefile("s3-policy.json", { bucket = var.domainName })
 }
