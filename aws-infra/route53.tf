@@ -7,7 +7,7 @@ resource aws_route53_record domain {
   name    = format("%s.%s", var.subDomain, var.domainName)
   type    = "A"
   alias {
-    name    = resource.aws_s3_bucket.static-website.website_domain
+    name    = resource.aws_s3_bucket_website_configuration.static-website.website_domain
     zone_id = resource.aws_s3_bucket.static-website.hosted_zone_id
     evaluate_target_health = true
   }
