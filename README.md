@@ -9,6 +9,12 @@ These steps are done manually for inital setup:
 - [X] Create AWS Access Key Pair for Github
 - [X] Put AWS Access Key Pair in repo's secrets
 
+### Transfer Domain
+- [X] Domain was registered in another account, therefore transfer ownership to this account (manual, time consuming)
+- [X] Manually configure the ACM certificates for the domain
+
+The AWS account is setup, the domain is ready, the Terraform backend is in place... All set 🚀
+
 ### Terraform the Backend
 - [X] Create Terraform backend
   - [X] S3 Bucket for state files (nubadoo-terraform-state-bucket)
@@ -21,11 +27,6 @@ These steps are done manually for inital setup:
 #### Sources: 
 - [https://www.youtube.com/watch?v=FTgvgKT09qM](https://www.youtube.com/watch?v=FTgvgKT09qM)
 - [https://angelo-malatacca83.medium.com/aws-terraform-s3-and-dynamodb-backend-3b28431a76c1](https://angelo-malatacca83.medium.com/aws-terraform-s3-and-dynamodb-backend-3b28431a76c1)
-
-### Transfer Domain
-- [X] Domain was registered in another account, therefore transfer ownership to this account (manual, time consuming)
-
-The AWS account is setup, the domain is ready, the Terraform backend is in place... All set 🚀
 
 ## AWS Infra
 
