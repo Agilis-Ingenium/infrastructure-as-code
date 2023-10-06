@@ -49,7 +49,7 @@ An image of the solution:
 
 ### Database
 
-1. The Terraform module in elephant_sql_infra/main.tf create an instance of a **tiny_turtle** (free) database in eu-west-1 (Ireland)
+1. The Terraform module in **elephant_sql_infra/main.tf** create an instance of a **tiny_turtle** (free) database in eu-west-1 (Ireland)
 
 ### Github Actions
 
