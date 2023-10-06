@@ -9,5 +9,6 @@ resource aws_route53_record domain {
   alias {
     name    = resource.aws_s3_bucket.static-website.website_domain
     zone_id = resource.aws_s3_bucket.static-website.hosted_zone_id
+    evaluate_target_health = true
   }
 }
