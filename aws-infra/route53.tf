@@ -4,7 +4,7 @@ data aws_route53_zone zone {
 
 resource aws_route53_record zone {
   zone_id = aws_route53_zone.zone.zone_id
-  name    = var.domainName
+  name    = format("%s.%s", var.domainName, var.subDomain)
   type    = "A"
   alias {
     name                   = aws_s3_bucket.static-website.website_endpoint
