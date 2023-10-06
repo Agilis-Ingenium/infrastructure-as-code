@@ -30,10 +30,10 @@ resource aws_s3_bucket_public_access_block static-website {
   restrict_public_buckets = false
 }
 
-resource aws_s3_bucket_acl my-static-website" {
+resource aws_s3_bucket_acl static-website {
   depends_on = [
     aws_s3_bucket_ownership_controls.static-website,
-    aws_s3_bucket_public_access_block.static-website,
+    aws_s3_bucket_public_access_block.static-website
   ]
 
   bucket = aws_s3_bucket.static-website.id
