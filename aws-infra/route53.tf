@@ -11,12 +11,12 @@ resource aws_route53_record zone {
 }
 
 resource aws_route53_record domain {
-   name = format("%s.%s", var.subDomain, var.domainName)
-   zone_id = data.aws_route53_zone.zone.zone_id
-   type = "A"
-   alias {
-     name                   = aws_s3_bucket.static-website.website_endpoint
-     zone_id                = aws_s3_bucket.static-website.hosted_zone_id
-     evaluate_target_health = true
-   }
+  zone_id = data.aws_route53_zone.zone.zone_id
+  name    = "bucket"
+  type    = "A"
+
+  alias {
+    name    = resource.aws_s3_bucket.static-website.website_domain
+    zone_id = resource.aws_s3_bucket.static-website.hosted_zone_id
+  }
 }
