@@ -10,8 +10,3 @@ variable "domainName" {
   default = "www.nubadoo.com"
   type    = string
 }
-
-variable "bucketName" {
-  default = "www.nubadoo.com"
-  type    = string
-}
