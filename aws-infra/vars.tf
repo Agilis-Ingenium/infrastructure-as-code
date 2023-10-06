@@ -7,6 +7,11 @@ variable profile {
 }
 
 variable "domainName" {
-  default = "www.nubadoo.com"
+  default = "nubadoo.com"
   type    = string
+}
+
+variable "subDomain" {
+  default = "www"
+  type = string
 }
