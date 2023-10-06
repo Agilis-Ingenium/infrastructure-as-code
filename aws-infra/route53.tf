@@ -7,5 +7,5 @@ resource aws_route53_record zone {
   name    = format("%s.%s", var.subDomain, var.domainName)
   type    = "A"
   ttl     = 300
-  records = aws_s3_bucket.static-website.website_endpoint
+  records = [aws_s3_bucket.static-website.website_endpoint]
 }
