@@ -1,4 +1,4 @@
-name: S3 Static Hosting
+name: DESTROY :skull: S3 Static Hosting
 
 on:
   workflow_dispatch:
