@@ -2,8 +2,8 @@ resource aws_cloudfront_distribution distribution {
   provider = aws.us_east_1
 
   origin {
-    domain_name = aws_s3_bucket_website_configuration.static_website.website_endpoint
-    origin_id   = aws_s3_bucket_website_configuration.static_website.website_endpoint
+    domain_name = aws_s3_bucket_website_configuration.static-website.website_endpoint
+    origin_id   = aws_s3_bucket_website_configuration.static-website.website_endpoint
 
     custom_origin_config {
       http_port              = 80
@@ -23,7 +23,7 @@ resource aws_cloudfront_distribution distribution {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = aws_s3_bucket_website_configuration.static_website.website_endpoint
+    target_origin_id = aws_s3_bucket_website_configuration.static-website.website_endpoint
     compress         = true
 
     forwarded_values {
