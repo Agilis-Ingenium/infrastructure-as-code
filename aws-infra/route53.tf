@@ -1,27 +1,14 @@
 data aws_route53_zone zone {
-  name = var.apex_domain
+  name = var.domainName
 }
 
-resource aws_route53_record A {
-  zone_id = data.aws_route53_zone.zone.zone_id
-  name    = "www.${var.apex_domain}"
+resource aws_route53_record zone {
+  zone_id = aws_route53_zone.zone.zone_id
+  name    = var.domainName
   type    = "A"
-
   alias {
-    name                   = aws_cloudfront_distribution.distribution.domain_name
-    zone_id                = aws_cloudfront_distribution.distribution.hosted_zone_id
-    evaluate_target_health = false
-  }
-}
-
-resource aws_route53_record AAAA {
-  zone_id = data.aws_route53_zone.zone.zone_id
-  name    = "www.${var.apex_domain}"
-  type    = "AAAA"
-
-  alias {
-    name                   = aws_cloudfront_distribution.distribution.domain_name
-    zone_id                = aws_cloudfront_distribution.distribution.hosted_zone_id
-    evaluate_target_health = false
+    name                   = aws_s3_bucket.static-website.website_endpoint
+    zone_id                = aws_s3_bucket.static-website.hosted_zone_id
+    evaluate_target_health = true
   }
 }
