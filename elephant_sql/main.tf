@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    elephantsql = {
-      source = "elephantsql/elephantsql"
-    }
-  }
-}
-
 resource "elephantsql_instance" "sql_turtle" {
   name   = var.db_name
   plan   = var.db_plan
