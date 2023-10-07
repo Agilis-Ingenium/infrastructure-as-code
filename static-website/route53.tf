@@ -13,11 +13,8 @@ resource "aws_route53_record" "sub_domain_record" {
   type     = each.value
 
   alias {
-    name                   = resource.aws_s3_bucket_website_configuration.web_bucket_config.website_domain
-    zone_id                = resource.aws_s3_bucket.web_bucket.hosted_zone_id
+    name                   = aws_cloudfront_distribution.web_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.web_distribution.hosted_zone_id
     evaluate_target_health = true
   }
-}
-
-
-    
+}    

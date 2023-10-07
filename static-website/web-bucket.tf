@@ -26,12 +26,19 @@ resource "aws_s3_object" "site" {
 }
 */
 
-/*
 resource "aws_s3_bucket_acl" "web_bucket_acl" {
   bucket = aws_s3_bucket.web_bucket.id
   acl    = "private"
+  depends_on = [aws_s3_bucket_ownership_controls.s3_web_bucket_acl_ownership]
 }
-*/
+
+# Resource to avoid error "AccessControlListNotSupported: The bucket does not allow ACLs"
+resource "aws_s3_bucket_ownership_controls" "s3_web_bucket_acl_ownership" {
+  bucket = aws_s3_bucket.web_bucket.id
+  rule {
+    object_ownership = "ObjectWriter"
+  }
+}
 
 data "aws_iam_policy_document" "allow_access_from_cloud_front" {
   version = "2012-10-17"
@@ -57,9 +64,7 @@ data "aws_iam_policy_document" "allow_access_from_cloud_front" {
   }
 }
 
-/*
 resource "aws_s3_bucket_policy" "allow_access_from_cloud_front" {
   bucket = aws_s3_bucket.web_bucket.bucket
   policy = data.aws_iam_policy_document.allow_access_from_cloud_front.json
 }
-*/
