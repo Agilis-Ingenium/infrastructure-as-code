@@ -6,12 +6,13 @@ variable profile {
   default = "default"
 }
 
-variable "domainName" {
+variable "domain_name" {
   default = "nubadoo.com"
   type    = string
 }
 
-variable "subDomain" {
+variable "sub_domain_name" {
   default = "www"
   type = string
 }
+
