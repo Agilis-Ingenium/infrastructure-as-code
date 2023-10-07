@@ -9,6 +9,6 @@ terraform {
 
 module elephant_sql {
     source   = "./elephant_sql"
-    db_name  = "nubadoo"
-    db_plan  = "turtle"
+    db_name  = var.db_name
+    db_plan  = var.db_plan
 }
