@@ -7,8 +7,8 @@ terraform {
 }
 
 resource "elephantsql_instance" "sql_turtle" {
-  name   = "terraform-provider-test"
-  plan   = "turtle"
+  name   = var.db_name
+  plan   = var.db_plan
   region = "amazon-web-services::eu-west-1"
 }
 
