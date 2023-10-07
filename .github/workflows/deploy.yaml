@@ -1,7 +1,6 @@
 name: ✳️ DEPLOY 🚀
 
 on:
-  push:
   workflow_dispatch:
 
 env:
