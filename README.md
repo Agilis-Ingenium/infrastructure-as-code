@@ -11,16 +11,19 @@ These steps are done manually for inital setup:
 
 ### Transfer Domain
 - [X] Domain was registered in another account, therefore transfer ownership to this account (manual, time consuming)
-- [X] Manually configure the ACM certificates for the domain
+- [X] ~~Manually configure the ACM certificates for the domain-~  (this  is also part of Terraform now)
 
 ### Terraform the Backend
 - [X] Create Terraform backend
-  - [X] S3 Bucket for state files (nubadoo-terraform-state-bucket)
+  - [X] S3 Bucket for state files (terraform-state-for-nubadoo-com)
     - [X] Enable versioning on bucket
-  - [X] Creeate the DynamoDB table (nubadoo-terraform-state)
-  - [X] See **backend/main.tf** for Terraform code to perform this
-  - [X] Run the GH Actions workflow "Backend" _manually_ from the GH console (only ever run this once ❗)
+  - [X] Creeate the DynamoDB table (terraform-state-for-nubadoo-com)
+  - [X] See repo **terraform-backed** for Terraform code to perform this
+  - [X] Run the GH Actions workflow "DEPLOY Terraform Backend" _manually_ from the GH console (only ever run this once ❗)
   - [X] Successfully run - the backend is in place 🧑‍🚀
+  - [X] Cannot destroy with terraform as it is not in state files
+    - [X] If run with Github Action destroy manually,
+    - [X] Alternatively  clone repo and run from local machine and retain state
      
 The AWS account is setup, the domain is ready, the Terraform backend is in place... All set 🚀
      
@@ -41,16 +44,21 @@ The following components are in terraform solution:
 5. route53.tf - this configures the DNS records to point at the right places
 6. s3.tf - this creates a bucket with a configuration designed for hosting static websites
 7. variables.tf - these are variables / parameters we want to pass into the terraform before it runs
+8. TO DO : Cloud Front Functions
 
 An image of the solution:
 
 ![aws-infra-s3-static-hosting.png](img/aws-infra-s3-static-hosting.png)
+
+Static hosting is set up for each of the subdomains...
 
 ## Elephant SQL Infra
 
 ### Database
 
 1. The Terraform module in **elephant_sql_infra/main.tf** create an instance of a **tiny_turtle** (free) database in eu-west-1 (Ireland)
+
+Note: This doesn't destroy from Github Actions workflow... Better to use local Terraform run for this whole solution.
 
 ## Github Actions
 
