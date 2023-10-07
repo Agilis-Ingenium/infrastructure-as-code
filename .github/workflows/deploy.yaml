@@ -9,12 +9,14 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: eu-west-1
   TF_VAR_apex_domain: nubadoo.com
-  ELEPHANTSQL_APIKEY: ${{ secrets.ELEPHANTSQL_APIKEY }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Elephant SQL API Key
+      run: export ELEPHANTSQL_APIKEY=${{ secrets.ELEPHANTSQL_APIKEY }}
+      
     - name: Clone
       uses: actions/checkout@v2
 
