@@ -1,9 +1,7 @@
-name: ✳️ CREATE S3 Static Hosting
+name: ✳️ DEPLOY 🚀
 
 on:
   push:
-    paths:
-      - "aws-infra/**"
   workflow_dispatch:
 
 env:
@@ -11,10 +9,6 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: eu-west-1
   TF_VAR_apex_domain: nubadoo.com
-
-defaults:
-  run:
-    working-directory: aws-infra
 
 jobs:
   build:
