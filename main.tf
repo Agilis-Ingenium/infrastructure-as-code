@@ -18,3 +18,7 @@ module "static-website" {
   certificate = module.certificate.arn
   policy = module.certificate.policy
 }
+
+module "railway" {
+  source = "./railway"
+}
