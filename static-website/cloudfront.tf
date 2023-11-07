@@ -49,7 +49,12 @@ resource "aws_cloudfront_distribution" "web_distribution" {
     acm_certificate_arn      = var.certificate
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
-
   }
 
+  resource "aws_cloudfront_function" "function" {
+    name    = "11ty-redirect"
+    runtime = "cloudfront-js-1.0"
+    publish = true
+    code    = file("${path.module}/11ty-redirect.js")
+  }
 }
