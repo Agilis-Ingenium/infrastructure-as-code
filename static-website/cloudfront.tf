@@ -51,10 +51,15 @@ resource "aws_cloudfront_distribution" "web_distribution" {
     minimum_protocol_version = "TLSv1.2_2021"
   }
 
-  resource "aws_cloudfront_function" "function" {
-    name    = "11ty-redirect"
-    runtime = "cloudfront-js-1.0"
-    publish = true
-    code    = file("${path.module}/11ty-redirect.js")
+  function_association {
+    event_type   = "viewer-request"
+    function_arn = aws_cloudfront_function.11ty.arn
   }
+}
+
+resource "aws_cloudfront_function" "11ty" {
+  name    = "11ty-redirect"
+  runtime = "cloudfront-js-1.0"
+  publish = true
+  code    = file("${path.module}/11ty-redirect.js")
 }
