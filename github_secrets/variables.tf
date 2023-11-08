@@ -1,3 +1,3 @@
-variable "psql_secret" {
+variable "psql_url" {
   type = string
 }
