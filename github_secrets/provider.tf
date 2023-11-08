@@ -6,8 +6,3 @@ terraform {
     }
   }
 }
-
-# provider "github" {
-#  token = 
-#  owner = "agilis-ingenium"
-#}
