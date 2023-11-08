@@ -10,8 +10,7 @@ env:
   TF_VAR_apex_domain: nubadoo.com
   ELEPHANTSQL_APIKEY: ${{ secrets.ELEPHANTSQL_APIKEY }}
   RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-  # GITHUB_OWNER: ${{ secrets.GH_OWNER }}
-  GITHUB_TOKEN: $GITHUB_TOKEN
+  GITHUB_OWNER: ${{ secrets.GH_OWNER }}
 
 jobs:
   build:
@@ -23,10 +22,6 @@ jobs:
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
-
-    - name: Print
-      run: |
-        echo "$GITHUB_TOKEN"
 
     - name: Terraform Init
       timeout-minutes: 2
