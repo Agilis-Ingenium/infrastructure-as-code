@@ -16,7 +16,7 @@ module "certificate" {
 }
 
 module "static-website" {
-  source          = "./static-website"
+  source          = "./static_website"
   for_each        = toset(var.sub_domains)
   sub_domain_name = each.value
   domain_name     = var.domain
