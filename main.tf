@@ -6,7 +6,7 @@ module "elephant_sql" {
 
 module "github_secrets" {
   source   = "./github_secrets"
-  psqlurl = module.elephant_sql.psql_url
+  psqlurl = "fart"
 }
 
 module "certificate" {
