@@ -26,4 +26,5 @@ module "static-website" {
 
 module "railway" {
   source = "./railway"
+  GH_TOKEN = var.GH_TOKEN   
 }
