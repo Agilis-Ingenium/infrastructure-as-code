@@ -53,11 +53,11 @@ resource "aws_cloudfront_distribution" "web_distribution" {
 
   function_association {
     event_type   = "viewer-request"
-    function_arn = aws_cloudfront_function.11ty.arn
+    function_arn = aws_cloudfront_function.function.arn
   }
 }
 
-resource "aws_cloudfront_function" "11ty" {
+resource "aws_cloudfront_function" "function" {
   name    = "11ty-redirect"
   runtime = "cloudfront-js-1.0"
   publish = true
