@@ -1,5 +1,5 @@
-resource "github_actions_secret" "psqlurl" {
+resource "github_actions_secret" "psql_url" {
   repository       = "database"
-  secret_name      = "psqlurl"
-  encrypted_value  = var.psqlurl
+  secret_name      = "psql_url"
+  encrypted_value  = var.psql_url
 }
