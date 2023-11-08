@@ -1,16 +1,16 @@
-variable db_name {
+variable "db_name" {
   default = "test_db"
-  type    =  string
+  type    = string
 }
 
-variable db_plan {
+variable "db_plan" {
   default = "turtle"
   type    = string
 }
 
-variable aws_region {
+variable "aws_region" {
   default = "eu-west-1"
-  type = string
+  type    = string
 }
 
 variable "sub_domains" {
@@ -18,9 +18,5 @@ variable "sub_domains" {
 }
 
 variable "domain" {
-  type = string
-}
-
-variable "GH_TOKEN" {
   type = string
 }
