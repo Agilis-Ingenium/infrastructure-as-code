@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-provider "github" {
-  token = "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"
-  owner = "agilis-ingenium"
-}
+# provider "github" {
+#  token = 
+#  owner = "agilis-ingenium"
+#}
