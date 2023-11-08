@@ -30,6 +30,11 @@ resource "aws_cloudfront_distribution" "web_distribution" {
       }
     }
 
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.function.arn
+    }
+
     viewer_protocol_policy = "redirect-to-https"
     min_ttl                = 0
     default_ttl            = 3600
@@ -49,10 +54,5 @@ resource "aws_cloudfront_distribution" "web_distribution" {
     acm_certificate_arn      = var.certificate
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
-  }
-
-  function_association {
-    event_type   = "viewer-request"
-    function_arn = aws_cloudfront_function.function.arn
   }
 }
