@@ -4,6 +4,11 @@ module elephant_sql {
     db_plan  = var.db_plan
 }
 
+module github_secrets {
+    source = "./github_secrets"
+    secret = "123"
+}
+
 module "certificate" {
     source = "./certificate"
     domain_name = var.domain
