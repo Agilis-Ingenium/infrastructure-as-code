@@ -11,7 +11,7 @@ env:
   ELEPHANTSQL_APIKEY: ${{ secrets.ELEPHANTSQL_APIKEY }}
   RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
   # GITHUB_OWNER: ${{ secrets.GH_OWNER }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: $GITHUB_TOKEN
 
 jobs:
   build:
