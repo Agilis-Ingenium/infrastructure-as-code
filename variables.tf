@@ -20,3 +20,7 @@ variable "sub_domains" {
 variable "domain" {
   type = string
 }
+
+variable "GH_TOKEN" {
+  type = string
+}
