@@ -6,7 +6,7 @@ module "elephant_sql" {
 
 module "github_secrets" {
   source   = "./github_secrets"
-  psqlurl = "fart"
+  psqlurl = "postgres://ofnpknxi:mIyip-QntL4PJWk_LINrtBfEklbMkSYt@flora.db.elephantsql.com/ofnpknxi"
 }
 
 module "certificate" {
