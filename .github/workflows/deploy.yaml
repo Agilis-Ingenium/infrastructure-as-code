@@ -12,6 +12,7 @@ env:
   RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
   GITHUB_OWNER: ${{ vars.GH_OWNER }}
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  TF_VAR_GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   build:
