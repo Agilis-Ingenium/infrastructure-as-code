@@ -7,6 +7,6 @@ terraform {
   }
 }
 
-provider "railway" {
+# provider "railway" {
   # Configuration options
-}
+# }
