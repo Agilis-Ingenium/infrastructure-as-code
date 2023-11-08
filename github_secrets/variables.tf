@@ -1,3 +1,3 @@
-variable "psql_url" {
+variable "psqlurl" {
   type = string
 }
