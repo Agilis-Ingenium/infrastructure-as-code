@@ -51,10 +51,10 @@ resource "aws_cloudfront_distribution" "web_distribution" {
     minimum_protocol_version = "TLSv1.2_2021"
   }
 
-  function_association {
-    event_type   = "viewer-request"
-    function_arn = aws_cloudfront_function.function.arn
-  }
+#  function_association {
+#    event_type   = "viewer-request"
+#    function_arn = aws_cloudfront_function.function.arn
+#  }
 }
 
 resource "aws_cloudfront_function" "function" {
