@@ -6,3 +6,7 @@ terraform {
     }
   }
 }
+
+provider "github" {
+  token = `GITHUB_TOKEN`
+}
