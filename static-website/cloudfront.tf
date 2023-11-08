@@ -56,10 +56,3 @@ resource "aws_cloudfront_distribution" "web_distribution" {
 #    function_arn = aws_cloudfront_function.function.arn
 #  }
 }
-
-resource "aws_cloudfront_function" "function" {
-  name    = "11ty-redirect"
-  runtime = "cloudfront-js-1.0"
-  publish = true
-  code    = file("${path.module}/11ty-redirect.js")
-}
