@@ -13,7 +13,7 @@ resource "github_actions_secret" "access_key_id" {
   repository = "${each.value}.${var.domain_name}"
 }
 
-resource "github_actions_secret" "access_key_id" {
+resource "github_actions_secret" "access_key_secret" {
   secret_name      = "AWS_SECRET_ACCESS_KEY"
   plaintext_value  = var.access_key_secret
   for_each        = toset(var.sub_domains)
