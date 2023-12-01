@@ -10,5 +10,5 @@ resource "github_actions_secret" "access_key_id" {
   secret_name      = "HELLO"
   plaintext_value  = var.access_key_id
   for_each        = toset(var.sub_domains)
-  repository = "${each.value}.${var.domain}"
+  repository = "${each.value}.${var.domain_name}"
 }
