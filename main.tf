@@ -4,9 +4,15 @@ module "elephant_sql" {
   db_plan = var.db_plan
 }
 
+module "iam" {
+  source = "./iam"
+}
+
 module "github_secrets" {
   source   = "./github_secrets"
   psql_url = module.elephant_sql.psql_url
+  access_key_id = module.iam.access_key_id
+  access_key_secret = module.iam.access_key_secret
 }
 
 module "certificate" {
