@@ -13,6 +13,8 @@ module "github_secrets" {
   psql_url = module.elephant_sql.psql_url
   access_key_id = module.iam.access_key_id
   access_key_secret = module.iam.access_key_secret
+  domain_name = var.domain
+  sub_domains = var.sub_domains
 }
 
 module "certificate" {
