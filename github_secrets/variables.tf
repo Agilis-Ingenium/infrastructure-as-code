@@ -9,3 +9,11 @@ variable "access_key_id" {
 variable "access_key_secret" {
   type =  string
 }
+
+variable "domain_name" {
+  type = string
+}
+
+variable "sub_domains" {
+  type    = list(string)
+}
