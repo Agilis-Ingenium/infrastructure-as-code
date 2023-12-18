@@ -11,7 +11,7 @@ These steps are done manually for inital setup:
 
 ### Transfer Domain
 - [X] Domain was registered in another account, therefore transfer ownership to this account (manual, time consuming)
-- [X] ~~Manually configure the ACM certificates for the domain-~  (this  is also part of Terraform now)
+- [X] Manually configure the ACM certificates for the domain  (this  is also part of Terraform now)
 
 ### Terraform the Backend
 - [X] Create Terraform backend
