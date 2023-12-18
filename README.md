@@ -62,6 +62,8 @@ Note: This doesn't destroy from Github Actions workflow... Better to use local T
 
 ## Github Actions
 
+These are launched manually so as not to destroy infra that is already in place.
+
 
      
 
