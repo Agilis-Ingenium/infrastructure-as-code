@@ -64,6 +64,6 @@ Note: This doesn't destroy from Github Actions workflow... Better to use local T
 
 These are launched manually so as not to destroy infra that is already in place.
 
+## Note
 
-     
-
+Not a perfect IaC implementation as some of the more tedious parts could be automated like passing credentials around and also doing the CDN refresh and and CDN functions.  But sufficient to demonstrate the IaC capabilities of the agile devops pieplines.  The rest of the things are enhancements to improve efficiency.
